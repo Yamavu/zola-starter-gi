@@ -1,0 +1,37 @@
+name: Build and deploy Zola site
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Zola
+        uses: nwtgck/actions-zola@v2
+        with:
+          version: '0.19.0'
+
+      - name: Build the site
+        run: zola build
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./public
+          # If you want to keep a CNAME, uncomment below and ensure CNAME file exists in repo root/static
+          # cname: example.com

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}{{ page.title }}{% endblock title %} - {{ config.title }}</title>
+  {% block head %}
+  <link rel="stylesheet" href="{{ get_url(path="css/main.css") }}">
+  {% endblock head %}
+</head>
+<body>
+  <header>
+    <h1><a href="{{ config.base_url | safe }}">{{ config.title }}</a></h1>
+    <nav>{% block nav %}{% endblock nav %}</nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>{{ page.title }}</h2>
+      {% block content %}{{ page.content | safe }}{% endblock content %}
+    </article>
+  </main>
+
+  <footer>
+    {% block footer %}
+    <small>© {{ config.title }} • {{ now() | date(format="%Y") }}</small>
+    {% endblock footer %}
+  </footer>
+</body>
+</html>

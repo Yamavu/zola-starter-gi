@@ -1,0 +1,17 @@
+
+
+
+{% block nav %}
+    {% for post in section.pages %}
+        <div>
+            <a href="{{ post.permalink }}">
+                {{ post.title }}
+            </a>
+        </div>
+    {% endfor %}
+{% endblock nav %}
+
+{% block content %}
+  {{ section.content | safe }}
+  
+{% endblock content %}
