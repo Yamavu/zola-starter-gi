@@ -1,9 +1,12 @@
-{% extends "base.html" %}
++++
+title="Portfolio"
++++
+
+This is a basic rich page with colocated assets.
 
 
-{% block content %}
-{{ page.content | safe }}
-
+Using Zola's <a href="https://www.getzola.org/documentation/content/image-processing/">image-processing tools</a>
+```
 <div>
 {% for asset in page.assets -%}
   {%- if asset is matching("[.](jpg|png)$") -%}
@@ -14,5 +17,4 @@
   {%- endif %}
 {%- endfor %}
 </div>
-
-{% endblock content %}
+```

@@ -16,8 +16,10 @@
 
   <main>
     <article>
-      <h2>{{ page.title }}</h2>
-      {% block content %}{{ page.content | safe }}{% endblock content %}
+      {% block content %}
+      {{ page.content | safe }}
+      <pre>{{ page | json_encode(pretty=true) | safe }}</pre>
+      {% endblock content %}
     </article>
   </main>
 

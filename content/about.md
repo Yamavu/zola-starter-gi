@@ -1,4 +1,5 @@
 +++
 title = "About"
 +++
-This is my article.
+
+This is a page example.
