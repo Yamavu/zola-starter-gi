@@ -1,37 +1,19 @@
-name: Build and deploy Zola site
 
-on:
-  push:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
+on: push
+name: Build and deploy GH Pages
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-
+    if: github.ref == 'refs/heads/main'
     steps:
-      - name: Checkout repository
+      - name: checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Install Zola
-        uses: nwtgck/actions-zola@v2
-        with:
-          version: '0.19.0'
-
-      - name: Build the site
-        run: zola build
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./public
-          # If you want to keep a CNAME, uncomment below and ensure CNAME file exists in repo root/static
-          # cname: example.com
+      - name: build_and_deploy
+        uses: shalzz/zola-deploy-action@master
+        env:
+          # Target branch
+          PAGES_BRANCH: gh-pages
+          # Provide personal access token
+          TOKEN: ${{ secrets.TOKEN }}
+          # Or if publishing to the same repo, use the automatic token
+          #TOKEN: ${{ secrets.GITHUB_TOKEN }}
