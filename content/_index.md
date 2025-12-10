@@ -1,6 +1,6 @@
 +++
-title : "Home"
-template : "index.html"
+title = "Home"
+template = "index.html"
 +++
 
 Welcome to the Zola starter site!
