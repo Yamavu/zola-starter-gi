@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 {% block title %}{{ section.title }}{% endblock title %}
 {% block nav %}
-  <nav>
-    Subsections:
-    {% for s in section.subsections %}
-    {% set subsection = get_section(path=s) %}
-      <a href="{{ subsection.permalink }}">{{ subsection.title }}</a>{% if not loop.last %},{% endif %}
-    {% endfor %}
-  </nav>
-  <nav>
-    Pages:
-    {% for post in section.pages %}
-      <a href="{{ post.permalink }}">{{ post.title }}</a>{% if not loop.last %},{% endif %}
-    {% endfor %}
-  </nav>
+<nav>
+  Subsections:
+  {% for s in section.subsections %}
+  {% set subsection = get_section(path=s) %}
+  <a href="{{ subsection.permalink }}">{{ subsection.title }}</a>{% if not loop.last %},{% endif %}
+  {% endfor %}
+</nav>
+<nav class="pages">
+  Pages:
+  {% for post in section.pages %}
+  <a href="{{ post.permalink }}">{{ post.title }}</a>{% if not loop.last %},{% endif %}
+  {% endfor %}
+</nav>
 {% endblock nav %}
 
 {% block content %}
-  {{ section.content | safe }}
-      <pre>{{ section | json_encode(pretty=true) | safe }}</pre>
+{{ section.content | safe }}
+<pre>{{ section | json_encode(pretty=true) | safe }}</pre>
 {% endblock content %}
