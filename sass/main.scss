@@ -1,0 +1,46 @@
+@use 'sass:color';
+
+$primary-color: lighten(black, 10%);
+//$link-color: #0b66d6;
+$link-color: scale-color(adjust-hue(blue, -27deg),
+        $saturation: -9.8%,
+        $lightness: -11.8%);
+$header-color: scale-color($primary-color,
+        $lightness: +25%);
+
+$footer-color: scale-color($primary-color,
+        $lightness: +33.33%);
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    max-width: 900px;
+    margin: 2rem auto;
+    line-height: 1.6;
+    padding: 0 1rem;
+    color: $primary-color;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+header p {
+    color: $header-color;
+    margin-top: 0.25rem;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    color: $footer-color;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}

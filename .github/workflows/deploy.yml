@@ -1,12 +1,8 @@
-# On every push this script is executed
 on: push
 name: Build and deploy GH Pages
-
-# Request write permissions so the GITHUB_TOKEN can push to gh-pages
 permissions:
   contents: write
   pages: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,14 +12,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: build_and_deploy
         uses: shalzz/zola-deploy-action@master
         env:
-          # Target branch
           PAGES_BRANCH: gh-pages
-          # Use the automatic token (recommended for same-repo deployments)
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # If this fails due to org/repo settings, create a PAT with repo scope
-          # and store it as a repo secret named TOKEN, then uncomment the line below
-          # TOKEN: ${{ secrets.TOKEN }}
