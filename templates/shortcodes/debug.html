@@ -1,1 +1,6 @@
-<pre><code class="language-json">{{ page | json_encode(pretty=true) | safe }}</code></pre>
+{% set code = page | json_encode(pretty=true) %}
+{% set code = "```json
+"~code~"
+```" %}
+{{ code | markdown(inline=true) | safe }}
+

@@ -1,5 +1,5 @@
-<pre>
-    <code class="{{ class }}">
-{{ load_data(path=path) }}
-    </code>
-</pre>
+{% if not type %}{% set type = "" %}{% endif%}
+{% set code = "```"~type~"
+"~load_data(path=path, required=true, format="plain")~"
+```" %}
+{{ code | markdown(inline=true) | safe }}

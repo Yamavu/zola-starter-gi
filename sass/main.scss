@@ -10,6 +10,7 @@ $header-color: scale-color($primary-color,
 $footer-color: scale-color($primary-color,
         $lightness: +33.33%);
 
+
 body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     max-width: 56rem;
