@@ -6,6 +6,10 @@ author = "Yamavu"
 compile_sass = true
 build_search_index = true
 
+[search]
+index_format = "elasticlunr_javascript"
+search_fields = ["title", "body"]
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola

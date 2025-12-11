@@ -1,12 +1,16 @@
 @use 'sass:color';
 
 $primary-color: lighten(black, 10%);
-$link-color: scale-color(adjust-hue(blue, -27deg),
+$link-color: scale-color(
+        $color: adjust-hue(blue, -27deg),
         $saturation: -9.8%,
         $lightness: -11.8%);
+$page-link-color: adjust-color($color: $link-color,
+        $hue: -64,
+        $saturation: 10%,
+        $lightness: -15%);
 $header-color: scale-color($primary-color,
         $lightness: +25%);
-
 $footer-color: scale-color($primary-color,
         $lightness: +33.33%);
 
@@ -36,7 +40,7 @@ a {
 }
 
 nav.pages a {
-    color: adjust-color($color: $link-color, $hue: -64, $saturation: 10%, $lightness: -15%);
+    color: $page-link-color;
 }
 
 a:hover {

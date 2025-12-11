@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<script src='{{ get_url(path="elasticlunr.min.js") }}'></script>
+<script src='{{ get_url(path="search_index.en.js") }}'></script>
+<style>
+    #search-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1.2rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    .search-results-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .search-results-item {
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+    }
+
+    .result-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #2a7ae2;
+        text-decoration: none;
+    }
+
+    .result-snippet {
+        font-size: 0.9em;
+        color: #666;
+    }
+
+    .search-results-list a:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock head%}
+{% block content %}
+<h1>{{ page.title }}</h1>
+<p>{{page.content | safe}}</p>
+
+<div class="search-box">
+    <input type="text" id="search-input" placeholder="Type to search..." aria-label="Search">
+</div>
+
+<ul id="search-results" class="search-results-list">
+</ul>
+
+<template id="result-template">
+    <li class="search-result-item">
+        <a class="result-title"></a>
+        <p class="result-snippet"></p>
+    </li>
+</template>
+
+<script>
+    const searchInput = document.getElementById('search-input');
+    const resultsList = document.getElementById('search-results');
+    const template = document.getElementById('result-template');
+
+    // Initialize index
+    const index = elasticlunr.Index.load(window.searchIndex);
+
+    // Debounce setup
+    let timeout = null;
+
+    searchInput.addEventListener('input', function (e) {
+        const term = e.target.value.trim();
+        clearTimeout(timeout);
+        timeout = setTimeout(() => handleSearch(term), 300);
+    });
+
+    function handleSearch(term) {
+        resultsList.innerHTML = ''; // Clear previous results
+
+        if (term.length === 0) return;
+
+        const results = index.search(term, {
+            bool: "AND",
+            expand: true
+        });
+
+        if (results.length === 0) {
+            resultsList.innerHTML = '<li>No results found.</li>';
+            return;
+        }
+
+        results.forEach(result => {
+            const doc = window.searchIndex.documentStore.docs[result.ref];
+
+            // 1. Clone the template content
+            const clone = template.content.cloneNode(true);
+
+            // 2. Select elements within the clone
+            const link = clone.querySelector('.result-title');
+            const snippet = clone.querySelector('.result-snippet');
+
+            // 3. Populate data
+            link.href = doc.id; // Zola uses permalink as ID
+            link.textContent = doc.title;
+
+            // Create a rough snippet (first 150 chars)
+            if (doc.body) {
+                snippet.textContent = doc.body.substring(0, 150) + '...';
+            }
+
+            // 4. Append to the DOM
+            resultsList.appendChild(clone);
+        });
+    }
+</script>
+{% endblock content %}
