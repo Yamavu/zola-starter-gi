@@ -1,8 +1,6 @@
 # Zola output and cache
 public
-.cache
 static/processed_images
-/public/search_index.en.js
 
 # Local machine / node
 .DS_Store
