@@ -1,5 +1,8 @@
 +++
 title = "About"
+[taxonomies]
+tags=["empty"]
+
 +++
 
-This is a page example.
+This is a page example with basic taxonomy.

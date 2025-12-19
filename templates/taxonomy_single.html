@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ term.name }}{% endblock title %}
+{% block nav %}
+<nav class="pages">
+  Pages:
+  {% for post in term.pages %}
+  <a href="{{ post.permalink }}">{{ post.title }}</a>{% if not loop.last %},{% endif %}
+  {% endfor %}
+</nav>
+{% endblock nav %}
+
+{% block content %}
+
+{% endblock content %}

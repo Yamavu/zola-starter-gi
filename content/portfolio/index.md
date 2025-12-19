@@ -1,8 +1,11 @@
 +++
 title="Portfolio"
+date="2025-12-10T23:45:00+00:00"
+[taxonomies]
+tags=["images"]
 +++
 
-This is a basic rich page with colocated assets.
+This is a basic rich page with colocated assets and basic taxonomy.
 
 {{ gallery() }}
 
