@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Search - Zola Starter with GI</title>
+  
+
+  <link rel="stylesheet" href='https://Yamavu.github.io/zola-starter-gi/main.css'>
+  
+<script src='https://Yamavu.github.io/zola-starter-gi/elasticlunr.min.js'></script>
+<script src='https://Yamavu.github.io/zola-starter-gi/search_index.en.js'></script>
+<style>
+    #search-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 1.2rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    .search-results-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .search-results-item {
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+    }
+
+    .result-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #2a7ae2;
+        text-decoration: none;
+    }
+
+    .result-snippet {
+        font-size: 0.9em;
+        color: #666;
+    }
+
+    .search-results-list a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+</head>
+
+<body>
+  <header>
+    <h1><a href="https://Yamavu.github.io/zola-starter-gi">Zola Starter with GI</a></h1>
+    <nav></nav>
+  </header>
+
+  <main>
+    <article>
+      
+<h1>Search</h1>
+<p><p>This is a Search Page that loads data from an index and searches it using <a href="https://github.com/weixsong/elasticlunr.js">elasticlunr.js</a></p>
+<p>English <code>en</code> is supported out of the box. The following other languages are supported via <a href="https://github.com/weixsong/lunr-languages#lunr-languages--">Lunr languages</a>: German, French, Spanish, Italian, Japanese, Dutch, Danish, Portuguese, Finnish, Romanian, Hungarian, Russian, Norwegian. For other languages a custom stemmer would need to be made, not rocket-science but not trivial either.</p>
+<p>Type your query below to search the site.</p>
+</p>
+
+<div class="search-box">
+    <input type="text" id="search-input" placeholder="Type to search..." aria-label="Search">
+</div>
+
+<ul id="search-results" class="search-results-list">
+</ul>
+
+<template id="result-template">
+    <li class="search-result-item">
+        <a class="result-title"></a>
+        <p class="result-snippet"></p>
+    </li>
+</template>
+
+<script>
+    const searchInput = document.getElementById('search-input');
+    const resultsList = document.getElementById('search-results');
+    const template = document.getElementById('result-template');
+
+    // Initialize index
+    const index = elasticlunr.Index.load(window.searchIndex);
+
+    // Debounce setup
+    let timeout = null;
+
+    searchInput.addEventListener('input', function (e) {
+        const term = e.target.value.trim();
+        clearTimeout(timeout);
+        timeout = setTimeout(() => handleSearch(term), 300);
+    });
+
+    function handleSearch(term) {
+        resultsList.innerHTML = ''; // Clear previous results
+
+        if (term.length === 0) return;
+
+        const results = index.search(term, {
+            bool: "AND",
+            expand: true
+        });
+
+        if (results.length === 0) {
+            resultsList.innerHTML = '<li>No results found.</li>';
+            return;
+        }
+
+        results.forEach(result => {
+            const doc = window.searchIndex.documentStore.docs[result.ref];
+
+            // 1. Clone the template content
+            const clone = template.content.cloneNode(true);
+
+            // 2. Select elements within the clone
+            const link = clone.querySelector('.result-title');
+            const snippet = clone.querySelector('.result-snippet');
+
+            // 3. Populate data
+            link.href = doc.id; // Zola uses permalink as ID
+            link.textContent = doc.title;
+
+            // Create a rough snippet (first 150 chars)
+            if (doc.body) {
+                snippet.textContent = doc.body.substring(0, 150) + '...';
+            }
+
+            // 4. Append to the DOM
+            resultsList.appendChild(clone);
+        });
+    }
+</script>
+
+    </article>
+  </main>
+
+  <footer>
+    
+    <small>© Yamavu • 2025</small>
+    
+  </footer>
+</body>
+
+</html>

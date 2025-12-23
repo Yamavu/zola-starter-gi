@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://Yamavu.github.io/zola-starter-gi/</loc>
+    </url>
+    <url>
+        <loc>https://Yamavu.github.io/zola-starter-gi/about/</loc>
+    </url>
+    <url>
+        <loc>https://Yamavu.github.io/zola-starter-gi/blog/</loc>
+    </url>
+    <url>
+        <loc>https://Yamavu.github.io/zola-starter-gi/blog/entry1/</loc>
+        <lastmod>2025-12-01</lastmod>
+    </url>
+    <url>
+        <loc>https://Yamavu.github.io/zola-starter-gi/portfolio/</loc>
+        <lastmod>2025-12-10T23:45:00+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://Yamavu.github.io/zola-starter-gi/search/</loc>
+    </url>
+    <url>
+        <loc>https://Yamavu.github.io/zola-starter-gi/tags/</loc>
+    </url>
+    <url>
+        <loc>https://Yamavu.github.io/zola-starter-gi/tags/empty/</loc>
+    </url>
+    <url>
+        <loc>https://Yamavu.github.io/zola-starter-gi/tags/images/</loc>
+    </url>
+</urlset>

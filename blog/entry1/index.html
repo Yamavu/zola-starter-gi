@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Entry1 - Zola Starter with GI</title>
+  
+  <link rel="stylesheet" href='https://Yamavu.github.io/zola-starter-gi/main.css'>
+  
+</head>
+
+<body>
+  <header>
+    <h1><a href="https://Yamavu.github.io/zola-starter-gi">Zola Starter with GI</a></h1>
+    <nav></nav>
+  </header>
+
+  <main>
+    <article>
+      
+<p>This is a baic page with a youtube video.</p>
+<div >
+    <iframe
+        src="https://www.youtube.com/embed/jfKfPfyJRdk"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen>
+    </iframe>
+</div>
+<p>Using the shortcode below:</p>
+
+
+<pre data-lang="html.j2" style="background-color:#eff1f5;color:#4f5b66;" class="language-html.j2 "><code class="language-html.j2" data-lang="html.j2"><span>&lt;</span><span style="color:#bf616a;">div </span><span style="color:#d08770;">{% if class %}class</span><span>=&quot;</span><span style="color:#a3be8c;">{{class}}</span><span>&quot;</span><span style="color:#d08770;">{% endif %}</span><span>&gt;
+</span><span>    &lt;</span><span style="color:#bf616a;">iframe
+</span><span>        </span><span style="color:#d08770;">src</span><span>=&quot;</span><span style="color:#a3be8c;">https://www.youtube.com/embed/{{id}}{% if autoplay %}?autoplay=1{% endif %}</span><span>&quot;
+</span><span>        </span><span style="color:#d08770;">webkitallowfullscreen
+</span><span>        </span><span style="color:#d08770;">mozallowfullscreen
+</span><span>        </span><span style="color:#d08770;">allowfullscreen</span><span>&gt;
+</span><span>    &lt;/</span><span style="color:#bf616a;">iframe</span><span>&gt;
+</span><span>&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span></code></pre>
+
+
+
+    </article>
+  </main>
+
+  <footer>
+    
+    <small>© Yamavu • 2025</small>
+    
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Zola Starter with GI</title>
+    <link rel="self" type="application/atom+xml" href="https://Yamavu.github.io/zola-starter-gi/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://Yamavu.github.io/zola-starter-gi"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-12-10T23:45:00+00:00</updated>
+    <id>https://Yamavu.github.io/zola-starter-gi/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Portfolio</title>
+        <published>2025-12-10T23:45:00+00:00</published>
+        <updated>2025-12-10T23:45:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Yamavu
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://Yamavu.github.io/zola-starter-gi/portfolio/"/>
+        <id>https://Yamavu.github.io/zola-starter-gi/portfolio/</id>
+        
+        <content type="html" xml:base="https://Yamavu.github.io/zola-starter-gi/portfolio/">&lt;p&gt;This is a basic rich page with colocated assets and basic taxonomy.&lt;&#x2F;p&gt;
+&lt;div&gt;
+  
+  &lt;a href=&quot;https:&#x2F;&#x2F;Yamavu.github.io&#x2F;zola-starter-gi&#x2F;portfolio&#x2F;image1.png&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;Yamavu.github.io&amp;#x2F;zola-starter-gi&amp;#x2F;processed_images&amp;#x2F;image1.5e9dba05dcb62164.png&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+  &lt;a href=&quot;https:&#x2F;&#x2F;Yamavu.github.io&#x2F;zola-starter-gi&#x2F;portfolio&#x2F;image2.jpg&quot; target=&quot;_blank&quot;&gt;
+    &lt;img src=&quot;https:&amp;#x2F;&amp;#x2F;Yamavu.github.io&amp;#x2F;zola-starter-gi&amp;#x2F;processed_images&amp;#x2F;image2.474efafce3ed2522.jpg&quot; &#x2F;&gt;
+  &lt;&#x2F;a&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Using Zola&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;www.getzola.org&#x2F;documentation&#x2F;content&#x2F;image-processing&#x2F;&quot;&gt;image-processing tools&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+
+
+&lt;pre data-lang=&quot;html.j2&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-html.j2 &quot;&gt;&lt;code class=&quot;language-html.j2&quot; data-lang=&quot;html.j2&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  {% &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;asset &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;page&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;assets &lt;&#x2F;span&gt;&lt;span&gt;-%}
+&lt;&#x2F;span&gt;&lt;span&gt;  {%- &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;asset &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;is &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;matching&lt;&#x2F;span&gt;&lt;span&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;[.](jpg|png)$&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;) -%}
+&lt;&#x2F;span&gt;&lt;span&gt;  {% &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;set &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;image &lt;&#x2F;span&gt;&lt;span&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;resize_image&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;path&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;asset&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;width&lt;&#x2F;span&gt;&lt;span&gt;=240, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;height&lt;&#x2F;span&gt;&lt;span&gt;=180, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;op&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;fill&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;) %}
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;a &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;href&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ get_url(path=asset) }}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;target&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;_blank&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;img &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{ image.url }}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;a&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  {%- &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;endif &lt;&#x2F;span&gt;&lt;span&gt;%}
+&lt;&#x2F;span&gt;&lt;span&gt;  {%- &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;endfor &lt;&#x2F;span&gt;&lt;span&gt;%}
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Entry1</title>
+        <published>2025-12-01T00:00:00+00:00</published>
+        <updated>2025-12-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Yamavu
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://Yamavu.github.io/zola-starter-gi/blog/entry1/"/>
+        <id>https://Yamavu.github.io/zola-starter-gi/blog/entry1/</id>
+        
+        <content type="html" xml:base="https://Yamavu.github.io/zola-starter-gi/blog/entry1/">&lt;p&gt;This is a baic page with a youtube video.&lt;&#x2F;p&gt;
+&lt;div &gt;
+    &lt;iframe
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;jfKfPfyJRdk&quot;
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;Using the shortcode below:&lt;&#x2F;p&gt;
+
+
+&lt;pre data-lang=&quot;html.j2&quot; style=&quot;background-color:#eff1f5;color:#4f5b66;&quot; class=&quot;language-html.j2 &quot;&gt;&lt;code class=&quot;language-html.j2&quot; data-lang=&quot;html.j2&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{% if class %}class&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{{class}}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;{% endif %}&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;iframe
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;src&lt;&#x2F;span&gt;&lt;span&gt;=&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;{{id}}{% if autoplay %}?autoplay=1{% endif %}&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;webkitallowfullscreen
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;mozallowfullscreen
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;allowfullscreen&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;iframe&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;div&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+</feed>

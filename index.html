@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home - Zola Starter with GI</title>
+  
+  <link rel="stylesheet" href='https://Yamavu.github.io/zola-starter-gi/main.css'>
+  
+</head>
+
+<body>
+  <header>
+    <h1><a href="https://Yamavu.github.io/zola-starter-gi">Zola Starter with GI</a></h1>
+    <nav>
+<nav>
+  Subsections:
+  
+  
+  <a href="https:&#x2F;&#x2F;Yamavu.github.io&#x2F;zola-starter-gi&#x2F;blog&#x2F;">Blog</a>
+  
+</nav>
+<nav class="pages">
+  Pages:
+  
+  <a href="https:&#x2F;&#x2F;Yamavu.github.io&#x2F;zola-starter-gi&#x2F;about&#x2F;">About</a>,
+  
+  <a href="https:&#x2F;&#x2F;Yamavu.github.io&#x2F;zola-starter-gi&#x2F;search&#x2F;">Search</a>,
+  
+  <a href="https:&#x2F;&#x2F;Yamavu.github.io&#x2F;zola-starter-gi&#x2F;portfolio&#x2F;">Portfolio</a>
+  
+</nav>
+</nav>
+  </header>
+
+  <main>
+    <article>
+      
+<p>Welcome to the Zola starter site!</p>
+<p>This minimal site is built on push and deployed to the gh-pages branch via GitHub Actions. Add more pages under the content/ directory (for example, content/about.md) and edit templates in templates/.</p>
+
+<pre>{
+  "relative_path": "_index.md",
+  "colocated_path": null,
+  "content": "<p>Welcome to the Zola starter site!</p>\n<p>This minimal site is built on push and deployed to the gh-pages branch via GitHub Actions. Add more pages under the content/ directory (for example, content/about.md) and edit templates in templates/.</p>\n",
+  "permalink": "https://Yamavu.github.io/zola-starter-gi/",
+  "draft": false,
+  "ancestors": [],
+  "title": "Home",
+  "description": null,
+  "extra": {},
+  "path": "/",
+  "components": [],
+  "toc": [],
+  "word_count": 39,
+  "reading_time": 1,
+  "lang": "en",
+  "assets": [],
+  "pages": [
+    {
+      "relative_path": "about.md",
+      "colocated_path": null,
+      "content": "<p>This is a page example with basic taxonomy.</p>\n",
+      "permalink": "https://Yamavu.github.io/zola-starter-gi/about/",
+      "slug": "about",
+      "ancestors": [
+        "_index.md"
+      ],
+      "title": "About",
+      "description": null,
+      "updated": null,
+      "date": null,
+      "year": null,
+      "month": null,
+      "day": null,
+      "taxonomies": {
+        "tags": [
+          "empty"
+        ]
+      },
+      "authors": [],
+      "extra": {},
+      "path": "/about/",
+      "components": [
+        "about"
+      ],
+      "summary": null,
+      "toc": [],
+      "word_count": 8,
+      "reading_time": 1,
+      "assets": [],
+      "draft": false,
+      "lang": "en",
+      "lower": null,
+      "higher": null,
+      "translations": [],
+      "backlinks": []
+    },
+    {
+      "relative_path": "search.md",
+      "colocated_path": null,
+      "content": "<p>This is a Search Page that loads data from an index and searches it using <a href=\"https://github.com/weixsong/elasticlunr.js\">elasticlunr.js</a></p>\n<p>English <code>en</code> is supported out of the box. The following other languages are supported via <a href=\"https://github.com/weixsong/lunr-languages#lunr-languages--\">Lunr languages</a>: German, French, Spanish, Italian, Japanese, Dutch, Danish, Portuguese, Finnish, Romanian, Hungarian, Russian, Norwegian. For other languages a custom stemmer would need to be made, not rocket-science but not trivial either.</p>\n<p>Type your query below to search the site.</p>\n",
+      "permalink": "https://Yamavu.github.io/zola-starter-gi/search/",
+      "slug": "search",
+      "ancestors": [
+        "_index.md"
+      ],
+      "title": "Search",
+      "description": null,
+      "updated": null,
+      "date": null,
+      "year": null,
+      "month": null,
+      "day": null,
+      "taxonomies": {},
+      "authors": [],
+      "extra": {},
+      "path": "/search/",
+      "components": [
+        "search"
+      ],
+      "summary": null,
+      "toc": [],
+      "word_count": 82,
+      "reading_time": 1,
+      "assets": [],
+      "draft": false,
+      "lang": "en",
+      "lower": null,
+      "higher": null,
+      "translations": [],
+      "backlinks": []
+    },
+    {
+      "relative_path": "portfolio/index.md",
+      "colocated_path": "portfolio/",
+      "content": "<p>This is a basic rich page with colocated assets and basic taxonomy.</p>\n<div>\n  \n  <a href=\"https://Yamavu.github.io/zola-starter-gi/portfolio/image1.png\" target=\"_blank\">\n    <img src=\"https:&#x2F;&#x2F;Yamavu.github.io&#x2F;zola-starter-gi&#x2F;processed_images&#x2F;image1.5e9dba05dcb62164.png\" />\n  </a>\n  <a href=\"https://Yamavu.github.io/zola-starter-gi/portfolio/image2.jpg\" target=\"_blank\">\n    <img src=\"https:&#x2F;&#x2F;Yamavu.github.io&#x2F;zola-starter-gi&#x2F;processed_images&#x2F;image2.474efafce3ed2522.jpg\" />\n  </a>\n</div>\n<p>Using Zola's <a href=\"https://www.getzola.org/documentation/content/image-processing/\">image-processing tools</a></p>\n\n\n<pre data-lang=\"html.j2\" style=\"background-color:#eff1f5;color:#4f5b66;\" class=\"language-html.j2 \"><code class=\"language-html.j2\" data-lang=\"html.j2\"><span>&lt;</span><span style=\"color:#bf616a;\">div</span><span>&gt;\n</span><span>  {% </span><span style=\"color:#b48ead;\">for </span><span style=\"color:#bf616a;\">asset </span><span style=\"color:#b48ead;\">in </span><span style=\"color:#bf616a;\">page</span><span>.</span><span style=\"color:#bf616a;\">assets </span><span>-%}\n</span><span>  {%- </span><span style=\"color:#b48ead;\">if </span><span style=\"color:#bf616a;\">asset </span><span style=\"color:#b48ead;\">is </span><span style=\"color:#bf616a;\">matching</span><span>(&quot;</span><span style=\"color:#a3be8c;\">[.](jpg|png)$</span><span>&quot;) -%}\n</span><span>  {% </span><span style=\"color:#b48ead;\">set </span><span style=\"color:#bf616a;\">image </span><span>= </span><span style=\"color:#bf616a;\">resize_image</span><span>(</span><span style=\"color:#bf616a;\">path</span><span>=</span><span style=\"color:#bf616a;\">asset</span><span>, </span><span style=\"color:#bf616a;\">width</span><span>=240, </span><span style=\"color:#bf616a;\">height</span><span>=180, </span><span style=\"color:#bf616a;\">op</span><span>=&quot;</span><span style=\"color:#a3be8c;\">fill</span><span>&quot;) %}\n</span><span>  &lt;</span><span style=\"color:#bf616a;\">a </span><span style=\"color:#d08770;\">href</span><span>=&quot;</span><span style=\"color:#a3be8c;\">{{ get_url(path=asset) }}</span><span>&quot; </span><span style=\"color:#d08770;\">target</span><span>=&quot;</span><span style=\"color:#a3be8c;\">_blank</span><span>&quot;&gt;\n</span><span>    &lt;</span><span style=\"color:#bf616a;\">img </span><span style=\"color:#d08770;\">src</span><span>=&quot;</span><span style=\"color:#a3be8c;\">{{ image.url }}</span><span>&quot; /&gt;\n</span><span>  &lt;/</span><span style=\"color:#bf616a;\">a</span><span>&gt;\n</span><span>  {%- </span><span style=\"color:#b48ead;\">endif </span><span>%}\n</span><span>  {%- </span><span style=\"color:#b48ead;\">endfor </span><span>%}\n</span><span>&lt;/</span><span style=\"color:#bf616a;\">div</span><span>&gt;\n</span><span>\n</span></code></pre>\n",
+      "permalink": "https://Yamavu.github.io/zola-starter-gi/portfolio/",
+      "slug": "portfolio",
+      "ancestors": [
+        "_index.md"
+      ],
+      "title": "Portfolio",
+      "description": null,
+      "updated": null,
+      "date": "2025-12-10T23:45:00+00:00",
+      "year": 2025,
+      "month": 12,
+      "day": 10,
+      "taxonomies": {
+        "tags": [
+          "images"
+        ]
+      },
+      "authors": [],
+      "extra": {},
+      "path": "/portfolio/",
+      "components": [
+        "portfolio"
+      ],
+      "summary": null,
+      "toc": [],
+      "word_count": 34,
+      "reading_time": 1,
+      "assets": [
+        "/portfolio/image1.png",
+        "/portfolio/image2.jpg"
+      ],
+      "draft": false,
+      "lang": "en",
+      "lower": null,
+      "higher": null,
+      "translations": [],
+      "backlinks": []
+    }
+  ],
+  "subsections": [
+    "blog/_index.md"
+  ],
+  "translations": [],
+  "backlinks": [],
+  "generate_feeds": false,
+  "transparent": false,
+  "paginate_by": null,
+  "paginate_reversed": false
+}</pre>
+
+    </article>
+  </main>
+
+  <footer>
+    
+    <small>© Yamavu • 2025</small>
+    
+  </footer>
+</body>
+
+</html>

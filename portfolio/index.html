@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio - Zola Starter with GI</title>
+  
+  <link rel="stylesheet" href='https://Yamavu.github.io/zola-starter-gi/main.css'>
+  
+</head>
+
+<body>
+  <header>
+    <h1><a href="https://Yamavu.github.io/zola-starter-gi">Zola Starter with GI</a></h1>
+    <nav></nav>
+  </header>
+
+  <main>
+    <article>
+      
+<p>This is a basic rich page with colocated assets and basic taxonomy.</p>
+<div>
+  
+  <a href="https://Yamavu.github.io/zola-starter-gi/portfolio/image1.png" target="_blank">
+    <img src="https:&#x2F;&#x2F;Yamavu.github.io&#x2F;zola-starter-gi&#x2F;processed_images&#x2F;image1.5e9dba05dcb62164.png" />
+  </a>
+  <a href="https://Yamavu.github.io/zola-starter-gi/portfolio/image2.jpg" target="_blank">
+    <img src="https:&#x2F;&#x2F;Yamavu.github.io&#x2F;zola-starter-gi&#x2F;processed_images&#x2F;image2.474efafce3ed2522.jpg" />
+  </a>
+</div>
+<p>Using Zola's <a href="https://www.getzola.org/documentation/content/image-processing/">image-processing tools</a></p>
+
+
+<pre data-lang="html.j2" style="background-color:#eff1f5;color:#4f5b66;" class="language-html.j2 "><code class="language-html.j2" data-lang="html.j2"><span>&lt;</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>  {% </span><span style="color:#b48ead;">for </span><span style="color:#bf616a;">asset </span><span style="color:#b48ead;">in </span><span style="color:#bf616a;">page</span><span>.</span><span style="color:#bf616a;">assets </span><span>-%}
+</span><span>  {%- </span><span style="color:#b48ead;">if </span><span style="color:#bf616a;">asset </span><span style="color:#b48ead;">is </span><span style="color:#bf616a;">matching</span><span>(&quot;</span><span style="color:#a3be8c;">[.](jpg|png)$</span><span>&quot;) -%}
+</span><span>  {% </span><span style="color:#b48ead;">set </span><span style="color:#bf616a;">image </span><span>= </span><span style="color:#bf616a;">resize_image</span><span>(</span><span style="color:#bf616a;">path</span><span>=</span><span style="color:#bf616a;">asset</span><span>, </span><span style="color:#bf616a;">width</span><span>=240, </span><span style="color:#bf616a;">height</span><span>=180, </span><span style="color:#bf616a;">op</span><span>=&quot;</span><span style="color:#a3be8c;">fill</span><span>&quot;) %}
+</span><span>  &lt;</span><span style="color:#bf616a;">a </span><span style="color:#d08770;">href</span><span>=&quot;</span><span style="color:#a3be8c;">{{ get_url(path=asset) }}</span><span>&quot; </span><span style="color:#d08770;">target</span><span>=&quot;</span><span style="color:#a3be8c;">_blank</span><span>&quot;&gt;
+</span><span>    &lt;</span><span style="color:#bf616a;">img </span><span style="color:#d08770;">src</span><span>=&quot;</span><span style="color:#a3be8c;">{{ image.url }}</span><span>&quot; /&gt;
+</span><span>  &lt;/</span><span style="color:#bf616a;">a</span><span>&gt;
+</span><span>  {%- </span><span style="color:#b48ead;">endif </span><span>%}
+</span><span>  {%- </span><span style="color:#b48ead;">endfor </span><span>%}
+</span><span>&lt;/</span><span style="color:#bf616a;">div</span><span>&gt;
+</span><span>
+</span></code></pre>
+
+
+
+    </article>
+  </main>
+
+  <footer>
+    
+    <small>© Yamavu • 2025</small>
+    
+  </footer>
+</body>
+
+</html>

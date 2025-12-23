@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://Yamavu.github.io/zola-starter-gi/sitemap.xml
